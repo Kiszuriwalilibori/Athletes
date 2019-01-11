@@ -1,0 +1,46 @@
+.c-profile{display:flex;align-items:center;padding:10px}.c-profile h1{margin-bottom:.1em;font-family:Josefin Sans,Helvetica,sans-serif;color:#344563}.c-profile ul{margin:0;padding-left:0}.c-profile li{list-style:none;margin-bottom:3px}.c-profile .photo{margin-right:20px;width:120px;height:120px;background-size:cover;background-repeat:no-repeat;background-position:50%;box-shadow:3px 3px 20px -3px gray;border:2px solid #0052cc;border-radius:50%}.c-overview .header{color:#172b4d}.c-overview .header,.c-overview .label{font-family:Josefin Sans,Helvetica,sans-serif}.c-overview .label{padding-right:5px;font-weight:700}.c-overview .bio{line-height:1.4}.c-overview .bio,.c-overview .skillset{margin-top:5px}.c-overview .list{display:inline}.c-overview .list-item{margin:3px 10px}.sport-icon{display:inline block;margin:5px;height:"8"}.c-predictions .header{font-family:Josefin Sans,Helvetica,sans-serif;color:#172b4d}.tags{min-width:60px;padding:5px;border:none;margin:auto 5px;border-radius:30px;font:normal normal 700 12px/normal Josefin Sans,Helvetica,sans-serif;color:#fff;text-align:center;background:#1e90ff;background-image:linear-gradient(180deg,#3498db,#2980b9)}.hidden{display:none!important}.sport-icon{cursor:pointer;background-color:#e6e6fa;border-radius:5px;display:inline block;margin:5px 5px 5px 0;height:40px;width:40px}.p-home__header{color:#42526e;max-width:600px;margin:0 auto;display:flex;flex-direction:row;justify-content:space-between}.tags{min-width:60px;padding:5px;border:none;margin:auto 5px;border-radius:30px;font:normal normal 700 12px/normal Josefin Sans,Helvetica,sans-serif;color:#fff;text-align:center;background:linear-gradient(180deg,#647a39,#7cbc0a)}.hidden{display:none!important}.sport-icon{cursor:pointer;display:inline block;margin:5px;height:40px;width:40px}.tags{min-width:60px;padding:5px;border:none;margin:auto 5px;border-radius:30px;font:normal normal 700 12px/normal Josefin Sans,Helvetica,sans-serif;color:#fff;text-align:center;background:linear-gradient(180deg,#647a39,#7cbc0a)}.hidden{display:none!important}.sport-icon{cursor:pointer;display:inline block;margin:5px;height:40px;width:40px}
+.p-home{background-color:#fafbfc;color:#42526e;max-width:600px;margin:50 auto;padding:5px 20px;;border:1px solid #ebecf0}
+body,html{font-family:Lato,Helvetica,sans-serif}.l-section .header{margin-bottom:.1em}.l-section .content{margin:10px 0}
+body{color: #fff;
+	background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+	background-size: 400% 400%;
+	-webkit-animation: Gradient 15s ease infinite;
+	-moz-animation: Gradient 15s ease infinite;
+	animation: Gradient 15s ease infinite;
+}
+
+@-webkit-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@-moz-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
