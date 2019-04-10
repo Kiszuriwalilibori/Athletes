@@ -7,8 +7,8 @@ import PropTypes from 'prop-types'
 import './index.styl'
 import {isBestSkill, isWorstSkill} from '../../libs/calculate'
 
-export default class Overview extends React.Component {
-render() {
+const Overview =React.memo((props)=> {
+
 const ContainerFor ={
     MainSection:(props)=> {return (<section className=' l-section c-overview '>{props.children}</section>)},
     Content:(props)=>{return (<div className='content'>{props.children}</div>)},
@@ -17,16 +17,16 @@ const ContainerFor ={
  
 const headerStyle =  "header d-flex align-items-center justify-content-center";   
 const Header=()=>{return(<h2 className= {headerStyle} ><span>Overview</span></h2>)}
-const images={upperBody: require('../../images/upperbody.png'), lowerBody:require('../../images/lowerbody.png') , aesthetics:require('../../images/aesthetics.png') , agility: require('../../images/agility.png'), endurance: require('../../images/endurance.png')}
-const skills= this.props.skillset;
+const images={upperBody: require('../../images/upperbody.png'), lowerBody: require('../../images/lowerbody.png') , aesthetics: require('../../images/aesthetics.png') , agility: require('../../images/agility.png'), endurance: require('../../images/endurance.png')}
+const skills = props.skillset;
 
       
-return this.props.isVisible? (
+return props.isVisible? (
 <ContainerFor.MainSection>
     <Header />
     <ContainerFor.Content>
         <span className="label">Bio</span>
-        <p className="bio">{this.props.bio}</p>
+        <p className="bio">{props.bio}</p>
         <span className="label">Skillset</span>
         <ContainerFor.Skills>
             {Object.keys(skills).map((skill) => { const colorclassforBest = isBestSkill(skills[skill],skills)? 'greeen':''; const colorclassforWorst
@@ -43,7 +43,7 @@ return this.props.isVisible? (
 </ContainerFor.MainSection>
          ):null
     }
-}
+)
 
 Overview.propTypes = {
     name: PropTypes.string.isRequired,
@@ -52,3 +52,4 @@ Overview.propTypes = {
     skillset: PropTypes.objectOf(PropTypes.number).isRequired,
     nativeDisciplines: PropTypes.arrayOf(PropTypes.string).isRequired,
 }
+export default Overview;

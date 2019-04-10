@@ -1,11 +1,8 @@
 
 import React from 'react'
 
-export default class Photo extends React.Component{
-    
-render(){
-
-
+const DisciplineImage = React.memo( (props)=>{
+ 
     const handleShowSport =(ev)=> {
         const el = ev.target;
         const element = el.nextSibling;
@@ -20,6 +17,8 @@ render(){
     
     }
 
-    const discipline =this.props.discipline
+    const discipline = props.discipline
     
-    return(<img key={discipline.name}src={`${discipline.photo}`} alt={ `${discipline.name}`} onClick={handleShowSport} className='sport-icon hvr-buzz' />)}}
+    return(<img key={discipline.name}src={`${discipline.photo}`} alt={ `${discipline.name}`} onClick={handleShowSport} className='sport-icon hvr-buzz' />);})
+    
+    export default DisciplineImage;

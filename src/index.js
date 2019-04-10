@@ -1,16 +1,13 @@
 /**
  * Application entrypoint
  */
-//import 'bootstrap/dist/css/bootstrap.min.css';
-import $ from 'jquery';
-import Popper from 'popper.js';
-import 'bootstrap/dist/js/bootstrap.bundle.min';
+
 import React from "react";
 import { render } from "react-dom";
 import Home from './pages/Home';
 import athletes from './fixtures/athletes.json';
 import disciplines from './fixtures/disciplines.json';
-import './index.styl'
+import './libs/main.css';
 
 const App = () => (
   <div>

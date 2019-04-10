@@ -16,7 +16,7 @@ import {
  
 import Radio from '../../components/RadioBis'
 import ClickableButton from '../../components/Buttons'
-import Photo from '../../components/Photo'
+import DisciplineImage from '../../components/Photo'
 import Sport from '../../components/Sport'
 import SingleCheckBox from '../../components/CheckBox'
 
@@ -47,7 +47,7 @@ componentWillMount () {
 
 }
 
-handleUpdateSelectedCheckboxes (tag){
+handleUpdateSelectedCheckboxes(tag){
     const tagList=this.state.selectedCheckboxes;
     updateSet(tag,tagList);
     this.setState({selectedCheckboxes:tagList});
@@ -126,7 +126,7 @@ return this.props.isVisible?(
 <ContainerFor.Content>
         {FilteredDisciplines.map((discipline) => { return (
         <div key={discipline.name} className="c-discipline ">
-            < Photo discipline={discipline} />
+            <DisciplineImage discipline={discipline} />
             < Sport discipline={discipline} skillset={this.props.athlete.skillset} disciplines={this.props.disciplines} />
         </div>
     ) })}

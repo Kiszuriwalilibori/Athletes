@@ -5,21 +5,20 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import './index.styl'
-import Photo from '../../components/Photo'
+import DisciplineImage from '../../components/Photo'
 import Sport from '../../components/Sport'
-export default class AvoidOrTry extends React.Component{
+const AvoidOrTry = React.memo((props)=>{
 
-render(){
-const ImportantDisciplines = this.props.DisciplinesToAvoidOrTry;
-const borderColor =()=>{return(this.props.color=='hints-best-color')?'hints-best-border':'hints-worst-border';}
-const wrapperStyle= 'rounded m-1 mb-3 p-1 shadow p-3  bg-white rounded '
-const boxStyle=  `c-discipline ${this.props.color}`
-return(<div className= {` ${wrapperStyle} ${borderColor()}`} > {ImportantDisciplines.map((discipline) =>{
+const ImportantDisciplines = props.DisciplinesToAvoidOrTry;
+const borderColor =()=>{return(props.color=='hints-best-color')?'hints-best-border':'hints-worst-border';};
+const wrapperStyle= 'rounded m-1 mb-3 p-1 shadow p-3  bg-white rounded ';
+const boxStyle=  `c-discipline ${props.color}`;
+return(<div className= {` ${wrapperStyle} ${borderColor()}`} > {ImportantDisciplines.map((discipline) => {
         
 return (
 
 <div key ={discipline.name} className= {boxStyle}>
-        <Photo discipline={discipline} />
+        <DisciplineImage discipline={discipline} />
         <Sport discipline={discipline} />
 </div>
 
@@ -28,11 +27,7 @@ return (
         </div>
          )
     }
-}
-
-
-
-
+)
 
 
 AvoidOrTry.propTypes=
@@ -48,7 +43,7 @@ AvoidOrTry.propTypes=
      color: PropTypes.string.isRequired,
 }
 
-
+export default AvoidOrTry ;
 
 
 

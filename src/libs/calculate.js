@@ -5,11 +5,6 @@ import fp from 'lodash/fp'
 import _ from "lodash";
 
 
-
-
-
-
-
 /** 
  *  
  * Method for calculating score for individual skill
@@ -157,27 +152,28 @@ export const sortByScore =(logical,array)=> {
 
 
 
-   export const sort =(logical, array, key)=> {
-    
-    array.sort((a, b)=>{
-        if (typeof(a) == 'string'){
-        var x = a[key].toLowerCase();
-        var y = b[key].toLowerCase();
-        }
-        else 
-        {var x = a[key];
-        var y = b[key]}
+export const sort =(logical, array, key)=> {
+
+array.sort((a, b)=>{
+    if (typeof(a) == 'string'){
+    var x = a[key].toLowerCase();
+    var y = b[key].toLowerCase();
+    }
+    else 
+    {var x = a[key];
+    var y = b[key]}
 
 
-        if (logical){
-        if (x < y) {return -1;}
-        if (x > y) {return 1;}
-        return 0;}
-        else{
-        if (x < y) {return 1;}
-        if (x > y) {return -1;}
-        return 0;}})
-   return array;}
+    if (logical){
+    if (x < y) {return -1;}
+    if (x > y) {return 1;}
+    return 0;}
+    else{
+    if (x < y) {return 1;}
+    if (x > y) {return -1;}
+    return 0;}})
+return array;
+}
 
 
 
@@ -264,21 +260,21 @@ add(x) {
     }
     
 
-    static CreatefromTable(table) {
-        const tags = new Tagi();
-        const shortened = unique(table);
+static CreatefromTable(table) {
+    const tags = new Tagi();
+    const shortened = unique(table);
 
-        shortened.forEach(element => {
-            const record = {
-                tag: element,
-                color: colors[shortened.indexOf(element)],
-                isMarked: false
-            };
-            tags.add(record)
-        });
-        return tags;
+    shortened.forEach(element => {
+        const record = {
+            tag: element,
+            color: colors[shortened.indexOf(element)],
+            isMarked: false
+        };
+        tags.add(record)
+    });
+    return tags;
 
-    }
+}
 
 
 getColourOfTag(tag){

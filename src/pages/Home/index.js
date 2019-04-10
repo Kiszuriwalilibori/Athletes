@@ -9,7 +9,7 @@ import Profile from '../../components/Profile'
 import Overview from '../../components/Overview'
 import Predictions from '../../components/Predictions'
 import Hints from '../../components/Hints'
-import ClickableButton from '../../components/Buttons'
+import MyButton from '../../components/Buttons'
 import { Disciplines } from '../../libs/calculate'
 
 
@@ -33,23 +33,24 @@ export default class Home extends React.Component {
         }
     
 
-
 componentWillMount () {
     this.Disciplines=Disciplines.CreatefromTableofObjects(this.props.disciplines);
    
 }
-handlePredictionsVisibility(event){
+handlePredictionsVisibility(){
     this.setState({isPredictionsVisible:!this.state.isPredictionsVisible});
 }
 
-handleHintsVisibility(event){
+handleHintsVisibility(){
     this.setState({isHintsVisible:!this.state.isHintsVisible});
+    
+    //window.location.hash = "#hints";
 }
 
-handleOverviewVisibility(event){
+handleOverviewVisibility(){
     this.setState({isOverviewVisible:!this.state.isOverviewVisible});
 }
-    handleNextAthlete(event) {
+    handleNextAthlete() {
 
         if (this.state.counter < this.props.athletes.length - 1) {
             let c = this.state.counter;
@@ -59,7 +60,7 @@ handleOverviewVisibility(event){
         };;
 
     }
-    handlePreviousAthlete(event) {
+    handlePreviousAthlete() {
         if (this.state.counter >= 1) {
             let c = this.state.counter;
             this.setState({
@@ -94,15 +95,15 @@ Buttons:(props)=>{return (<div className='header-flexible' >{props.children}</di
 if (athlete) return (
 <div>
     <ContainerFor.Buttons>
-        <ClickableButton text='<<< Previous' fn={ this.handlePreviousAthlete} visibility={counter !==0 }  />
-        <ClickableButton text='Next >>>' fn={ this.handleNextAthlete} visibility ={counter+1 !== this.props.athletes.length}/>
+        <MyButton text='<<< Previous' fn={ this.handlePreviousAthlete} visibility={counter !==0 }  />
+        <MyButton text='Next >>>' fn={ this.handleNextAthlete} visibility ={counter+1 !== this.props.athletes.length}/>
     </ContainerFor.Buttons>
     <ContainerFor.Profile>
         <Profile {...athlete} />
         <ContainerFor.SectionChoiceButtons>
-            <ClickableButton text='Predictions' fn={ this.handlePredictionsVisibility} visibility={true} />
-            <ClickableButton text='Hints' fn={ this.handleHintsVisibility} visibility={true} />
-            <ClickableButton text='Overview' fn={ this.handleOverviewVisibility} visibility={true} />
+            <MyButton text='Predictions' fn={ this.handlePredictionsVisibility} visibility={true} />
+            <MyButton text='Hints' fn={ this.handleHintsVisibility} visibility={true} />
+            <MyButton text='Overview' fn={ this.handleOverviewVisibility} visibility={true} />
         </ContainerFor.SectionChoiceButtons>
         <Overview {...athlete} isVisible={this.state.isOverviewVisible } />
         <Predictions athlete={athlete} disciplines={disciplines} isVisible={ this.state.isPredictionsVisible } />
